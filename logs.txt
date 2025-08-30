@@ -1,138 +1,138 @@
-4.6s 1 Traceback (most recent call last):
-4.6s 2 File "<string>", line 1, in <module>
-4.6s 3 File "/usr/local/lib/python3.11/dist-packages/papermill/execute.py", line 116, in execute_notebook
-4.6s 4 nb = papermill_engines.execute_notebook_with_engine(
-4.6s 5 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-4.6s 6 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 48, in execute_notebook_with_engine
-4.6s 7 return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
-4.6s 8 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-4.6s 9 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 368, in execute_notebook
-4.6s 10 nb_man.notebook_start()
-4.6s 11 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 76, in wrapper
-4.6s 12 return func(self, *args, **kwargs)
-4.6s 13 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-4.6s 14 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 211, in notebook_start
-4.6s 15 self.save()
-4.6s 16 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 76, in wrapper
-4.6s 17 return func(self, *args, **kwargs)
-4.6s 18 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-4.6s 19 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 152, in save
-4.6s 20 write_ipynb(self.nb, self.output_path)
-4.6s 21 File "/usr/local/lib/python3.11/dist-packages/papermill/iorw.py", line 486, in write_ipynb
-4.6s 22 papermill_io.write(nbformat.writes(nb), path)
-4.6s 23 File "/usr/local/lib/python3.11/dist-packages/papermill/iorw.py", line 102, in write
-4.6s 24 return self.get_handler(path, extensions).write(buf, path)
-4.6s 25 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-4.6s 26 File "/usr/local/lib/python3.11/dist-packages/papermill/iorw.py", line 215, in write
-4.6s 27 f.write(buf)
-4.6s 28 UnicodeEncodeError: 'utf-8' codec can't encode character '\udcca' in position 56930: surrogates not allowed
-6.5s 29 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
-6.5s 30 warn(
-6.5s 31 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
-6.5s 32 Traceback (most recent call last):
-6.5s 33 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 19, in parse_json
-6.5s 34 nb_dict = json.loads(s, **kwargs)
-6.5s 35 ^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 36 File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
-6.5s 37 return _default_decoder.decode(s)
-6.5s 38 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 39 File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
-6.5s 40 obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-6.5s 41 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 42 File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
-6.5s 43 raise JSONDecodeError("Expecting value", s, err.value) from None
-6.5s 44 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-6.5s 45 
-6.5s 46 The above exception was the direct cause of the following exception:
-6.5s 47 
-6.5s 48 Traceback (most recent call last):
-6.5s 49 File "/usr/local/bin/jupyter-nbconvert", line 10, in <module>
-6.5s 50 sys.exit(main())
-6.5s 51 ^^^^^^
-6.5s 52 File "/usr/local/lib/python3.11/dist-packages/jupyter_core/application.py", line 284, in launch_instance
-6.5s 53 super().launch_instance(argv=argv, **kwargs)
-6.5s 54 File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
-6.5s 55 app.start()
-6.5s 56 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 369, in start
-6.5s 57 self.convert_notebooks()
-6.5s 58 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 541, in convert_notebooks
-6.5s 59 self.convert_single_notebook(notebook_filename)
-6.5s 60 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 506, in convert_single_notebook
-6.5s 61 output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
-6.5s 62 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 63 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 435, in export_single_notebook
-6.5s 64 output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
-6.5s 65 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 66 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 190, in from_filename
-6.5s 67 return self.from_file(f, resources=resources, **kw)
-6.5s 68 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 69 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 208, in from_file
-6.5s 70 return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
-6.5s 71 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 72 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 174, in read
-6.5s 73 return reads(buf, as_version, capture_validation_error, **kwargs)
-6.5s 74 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 75 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 92, in reads
-6.5s 76 nb = reader.reads(s, **kwargs)
-6.5s 77 ^^^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 78 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 75, in reads
-6.5s 79 nb_dict = parse_json(s, **kwargs)
-6.5s 80 ^^^^^^^^^^^^^^^^^^^^^^^
-6.5s 81 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 25, in parse_json
-6.5s 82 raise NotJSONError(message) from e
-6.5s 83 nbformat.reader.NotJSONError: Notebook does not appear to be JSON: ''
-7.8s 84 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
-7.8s 85 warn(
-7.8s 86 [NbConvertApp] Converting notebook __notebook__.ipynb to html
-7.8s 87 Traceback (most recent call last):
-7.8s 88 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 19, in parse_json
-7.8s 89 nb_dict = json.loads(s, **kwargs)
-7.8s 90 ^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 91 File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
-7.8s 92 return _default_decoder.decode(s)
-7.8s 93 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 94 File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
-7.8s 95 obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-7.8s 96 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 97 File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
-7.8s 98 raise JSONDecodeError("Expecting value", s, err.value) from None
-7.8s 99 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-7.8s 100 
-7.8s 101 The above exception was the direct cause of the following exception:
-7.8s 102 
-7.8s 103 Traceback (most recent call last):
-7.8s 104 File "/usr/local/bin/jupyter-nbconvert", line 10, in <module>
-7.8s 105 sys.exit(main())
-7.8s 106 ^^^^^^
-7.8s 107 File "/usr/local/lib/python3.11/dist-packages/jupyter_core/application.py", line 284, in launch_instance
-7.8s 108 super().launch_instance(argv=argv, **kwargs)
-7.8s 109 File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
-7.8s 110 app.start()
-7.8s 111 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 369, in start
-7.8s 112 self.convert_notebooks()
-7.8s 113 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 541, in convert_notebooks
-7.8s 114 self.convert_single_notebook(notebook_filename)
-7.8s 115 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 506, in convert_single_notebook
-7.8s 116 output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
-7.8s 117 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 118 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 435, in export_single_notebook
-7.8s 119 output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
-7.8s 120 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 121 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 190, in from_filename
-7.8s 122 return self.from_file(f, resources=resources, **kw)
-7.8s 123 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 124 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 208, in from_file
-7.8s 125 return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
-7.8s 126 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 127 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 174, in read
-7.8s 128 return reads(buf, as_version, capture_validation_error, **kwargs)
-7.8s 129 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 130 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 92, in reads
-7.8s 131 nb = reader.reads(s, **kwargs)
-7.8s 132 ^^^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 133 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 75, in reads
-7.8s 134 nb_dict = parse_json(s, **kwargs)
-7.8s 135 ^^^^^^^^^^^^^^^^^^^^^^^
-7.8s 136 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 25, in parse_json
-7.8s 137 raise NotJSONError(message) from e
-7.8s 138 nbformat.reader.NotJSONError: Notebook does not appear to be JSON: ''
+5.1s 1 Traceback (most recent call last):
+5.1s 2 File "<string>", line 1, in <module>
+5.1s 3 File "/usr/local/lib/python3.11/dist-packages/papermill/execute.py", line 116, in execute_notebook
+5.1s 4 nb = papermill_engines.execute_notebook_with_engine(
+5.1s 5 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5.1s 6 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 48, in execute_notebook_with_engine
+5.1s 7 return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
+5.1s 8 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5.1s 9 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 368, in execute_notebook
+5.1s 10 nb_man.notebook_start()
+5.1s 11 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 76, in wrapper
+5.1s 12 return func(self, *args, **kwargs)
+5.1s 13 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5.1s 14 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 211, in notebook_start
+5.1s 15 self.save()
+5.1s 16 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 76, in wrapper
+5.1s 17 return func(self, *args, **kwargs)
+5.1s 18 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5.1s 19 File "/usr/local/lib/python3.11/dist-packages/papermill/engines.py", line 152, in save
+5.1s 20 write_ipynb(self.nb, self.output_path)
+5.1s 21 File "/usr/local/lib/python3.11/dist-packages/papermill/iorw.py", line 486, in write_ipynb
+5.1s 22 papermill_io.write(nbformat.writes(nb), path)
+5.1s 23 File "/usr/local/lib/python3.11/dist-packages/papermill/iorw.py", line 102, in write
+5.1s 24 return self.get_handler(path, extensions).write(buf, path)
+5.1s 25 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5.1s 26 File "/usr/local/lib/python3.11/dist-packages/papermill/iorw.py", line 215, in write
+5.1s 27 f.write(buf)
+5.1s 28 UnicodeEncodeError: 'utf-8' codec can't encode character '\udcca' in position 56889: surrogates not allowed
+7.0s 29 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+7.0s 30 warn(
+7.0s 31 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+7.0s 32 Traceback (most recent call last):
+7.0s 33 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 19, in parse_json
+7.0s 34 nb_dict = json.loads(s, **kwargs)
+7.0s 35 ^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 36 File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+7.0s 37 return _default_decoder.decode(s)
+7.0s 38 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 39 File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+7.0s 40 obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+7.0s 41 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 42 File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+7.0s 43 raise JSONDecodeError("Expecting value", s, err.value) from None
+7.0s 44 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+7.0s 45 
+7.0s 46 The above exception was the direct cause of the following exception:
+7.0s 47 
+7.0s 48 Traceback (most recent call last):
+7.0s 49 File "/usr/local/bin/jupyter-nbconvert", line 10, in <module>
+7.0s 50 sys.exit(main())
+7.0s 51 ^^^^^^
+7.0s 52 File "/usr/local/lib/python3.11/dist-packages/jupyter_core/application.py", line 284, in launch_instance
+7.0s 53 super().launch_instance(argv=argv, **kwargs)
+7.0s 54 File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+7.0s 55 app.start()
+7.0s 56 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 369, in start
+7.0s 57 self.convert_notebooks()
+7.0s 58 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 541, in convert_notebooks
+7.0s 59 self.convert_single_notebook(notebook_filename)
+7.0s 60 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 506, in convert_single_notebook
+7.0s 61 output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
+7.0s 62 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 63 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 435, in export_single_notebook
+7.0s 64 output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
+7.0s 65 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 66 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 190, in from_filename
+7.0s 67 return self.from_file(f, resources=resources, **kw)
+7.0s 68 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 69 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 208, in from_file
+7.0s 70 return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
+7.0s 71 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 72 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 174, in read
+7.0s 73 return reads(buf, as_version, capture_validation_error, **kwargs)
+7.0s 74 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 75 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 92, in reads
+7.0s 76 nb = reader.reads(s, **kwargs)
+7.0s 77 ^^^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 78 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 75, in reads
+7.0s 79 nb_dict = parse_json(s, **kwargs)
+7.0s 80 ^^^^^^^^^^^^^^^^^^^^^^^
+7.0s 81 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 25, in parse_json
+7.0s 82 raise NotJSONError(message) from e
+7.0s 83 nbformat.reader.NotJSONError: Notebook does not appear to be JSON: ''
+8.3s 84 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+8.3s 85 warn(
+8.3s 86 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+8.3s 87 Traceback (most recent call last):
+8.3s 88 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 19, in parse_json
+8.3s 89 nb_dict = json.loads(s, **kwargs)
+8.3s 90 ^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 91 File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+8.3s 92 return _default_decoder.decode(s)
+8.3s 93 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 94 File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+8.3s 95 obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+8.3s 96 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 97 File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+8.3s 98 raise JSONDecodeError("Expecting value", s, err.value) from None
+8.3s 99 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+8.3s 100 
+8.3s 101 The above exception was the direct cause of the following exception:
+8.3s 102 
+8.3s 103 Traceback (most recent call last):
+8.3s 104 File "/usr/local/bin/jupyter-nbconvert", line 10, in <module>
+8.3s 105 sys.exit(main())
+8.3s 106 ^^^^^^
+8.3s 107 File "/usr/local/lib/python3.11/dist-packages/jupyter_core/application.py", line 284, in launch_instance
+8.3s 108 super().launch_instance(argv=argv, **kwargs)
+8.3s 109 File "/usr/local/lib/python3.11/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+8.3s 110 app.start()
+8.3s 111 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 369, in start
+8.3s 112 self.convert_notebooks()
+8.3s 113 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 541, in convert_notebooks
+8.3s 114 self.convert_single_notebook(notebook_filename)
+8.3s 115 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 506, in convert_single_notebook
+8.3s 116 output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
+8.3s 117 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 118 File "/usr/local/lib/python3.11/dist-packages/nbconvert/nbconvertapp.py", line 435, in export_single_notebook
+8.3s 119 output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
+8.3s 120 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 121 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 190, in from_filename
+8.3s 122 return self.from_file(f, resources=resources, **kw)
+8.3s 123 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 124 File "/usr/local/lib/python3.11/dist-packages/nbconvert/exporters/exporter.py", line 208, in from_file
+8.3s 125 return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
+8.3s 126 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 127 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 174, in read
+8.3s 128 return reads(buf, as_version, capture_validation_error, **kwargs)
+8.3s 129 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 130 File "/usr/local/lib/python3.11/dist-packages/nbformat/__init__.py", line 92, in reads
+8.3s 131 nb = reader.reads(s, **kwargs)
+8.3s 132 ^^^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 133 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 75, in reads
+8.3s 134 nb_dict = parse_json(s, **kwargs)
+8.3s 135 ^^^^^^^^^^^^^^^^^^^^^^^
+8.3s 136 File "/usr/local/lib/python3.11/dist-packages/nbformat/reader.py", line 25, in parse_json
+8.3s 137 raise NotJSONError(message) from e
+8.3s 138 nbformat.reader.NotJSONError: Notebook does not appear to be JSON: ''
